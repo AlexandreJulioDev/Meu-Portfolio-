@@ -1,81 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Fontes do Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Fonte do Google - Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Generation Brasil">
-    <meta 
-        name="description"
-        content="Portfólio da Generation Brasil, 
-                desenvolvedor Full Stack especializado em criar experiências 
-                digitais incríveis. Conheça meus projetos e entre em contato."
-    >
-    <meta name="robots" content="index, follow">
-
-    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
-
-    <!-- Link para a Folha de Estilo da Página - CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <title>Portfólio Alexandre Julio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Mensagem Enviada — Alexandre Julio</title>
 </head>
-
-
 <body>
 
-    <!-- Cabeçalho da Página (header) -->
-    <header class="menu-container">
-        <div class="menu-content">
-            <a href="index.html" id="titulo">Portfólio</a>
+  <header id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-bracket">&lt;</span>AJ<span class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html#hero" class="nav-link">Início</a></li>
+          <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projetos</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <nav>
-                <ul class="menu-list">
-                    <li><a href="index.html#hero">Início</a></li>
-                    <li><a href="index.html#about">Sobre</a></li>
-                    <li><a href="index.html#projects">Projetos</a></li>
-                    <li><a href="index.html#contact">Contato</a></li>
-                </ul>
-            </nav>
+  <main>
+    <section class="success-section">
+      <div class="success-card">
+        <div class="success-icon-wrap">
+          <svg class="success-check" viewBox="0 0 52 52" fill="none">
+            <circle cx="26" cy="26" r="25" stroke="currentColor" stroke-width="2"/>
+            <path class="check-path" d="M14 27l8 8 16-16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
-    </header>
+        <h1>Mensagem enviada!</h1>
+        <p>Obrigado por entrar em contato, <strong>Alexandre Julio</strong> responderá em breve. Fique de olho no seu e-mail! 📬</p>
+        <a href="index.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Voltar ao início
+        </a>
+      </div>
+    </section>
+  </main>
 
-    <!-- Seção Principal da Página (main) -->
-    <main>
-        
-        <!-- Mensagem de Sucesso -->
-        <section class="success-container">
-            <article class="success-content">
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-bracket">&lt;</span>AJ<span class="logo-bracket">/&gt;</span>
+      </a>
+      <p>Desenvolvido com 💜 por <strong>Alexandre Julio</strong> &mdash; 2026</p>
+    </div>
+  </footer>
 
-                <figure class="success-icon">
-                    <img src="./assets/img/success.svg" 
-                        alt="Ilustração de sucesso" 
-                        class="float-animation" width="20%"
-                    >
-                </figure>
-
-                <h1>E-mail enviado com Sucesso!</h1>
-                <h2>Obrigado por entrar em contato! <br> Logo mais retornarei sua mensagem.</h2>
-
-                <a class="botao" href="index.html">Voltar para o Início</a>
-
-            </article>
-        </section>
-        
-    </main>
-
-    <!-- Rodapé da Página (footer) -->
-    <footer>
-		Desenvolvido por Alexandre Julio - 2026
-    </footer>
-
+  <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
