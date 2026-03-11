@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="ocean">
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,14 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <title>Alexandre Julio — Dev Full Stack</title>
+
+  <!-- Carrega tema salvo ANTES de renderizar para evitar flash -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme') || 'ocean';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
 </head>
 
 <body>
@@ -46,6 +54,18 @@
           <li><a href="#contact" class="nav-link">Contato</a></li>
         </ul>
       </nav>
+
+      <!-- THEME TOGGLE -->
+      <div class="theme-toggle" role="group" aria-label="Trocar tema">
+        <button class="theme-btn" id="btn-ocean" onclick="setTheme('ocean')" aria-label="Tema Ocean">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span>Ocean</span>
+        </button>
+        <button class="theme-btn" id="btn-emerald" onclick="setTheme('emerald')" aria-label="Tema Emerald">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Emerald</span>
+        </button>
+      </div>
 
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -84,6 +104,13 @@
             <span class="gradient-text">Alexandre Julio</span>
           </h1>
           <p class="hero-role">Desenvolvedor <span class="typed-text"></span><span class="cursor-blink">|</span></p>
+          <p class="hero-tagline">
+            Back-end Developer
+            <span class="tag-sep">·</span> Node.js
+            <span class="tag-sep">·</span> APIs REST
+            <span class="tag-sep">·</span> PostgreSQL
+            <span class="tag-sep">·</span> Spring Boot
+          </p>
           <p class="hero-desc">
             Transformo ideias em experiências digitais marcantes,<br class="br-desktop">
             combinando código limpo com design que encanta.
@@ -109,7 +136,6 @@
             <div class="avatar-img-container">
               <img id="heroAvatar" src="https://avatars.githubusercontent.com/u/0" alt="Alexandre Julio" class="avatar-img">
             </div>
-            <!-- Badges flutuantes -->
             <div class="floating-badge badge-top">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" width="22">
               <span>JavaScript</span>
@@ -217,7 +243,6 @@
           <p class="section-subtitle">Alguns dos projetos que desenvolvi, direto do meu GitHub.</p>
         </div>
 
-        <!-- Swiper -->
         <div class="swiper projects-swiper reveal">
           <div class="swiper-wrapper" id="swiperWrapper"></div>
           <div class="swiper-button-next"></div>
@@ -271,9 +296,19 @@
             </div>
           </div>
 
-          <form id="formulario" class="contact-form reveal reveal-delay" action="https://formsubmit.co/sua_chave" method="POST">
-            <input type="hidden" name="_next" value="https://seu_usuario.github.io/seu_repositorio/sucesso.html">
+          <!-- FORMULÁRIO COM EMAIL REAL CONFIGURADO -->
+          <form id="formulario" class="contact-form reveal reveal-delay"
+            action="https://formsubmit.co/alexandre.julio8772@gmail.com"
+            method="POST">
+
+            <!-- Redireciona para página de sucesso após envio -->
+            <input type="hidden" name="_next" value="https://meu-portfolio-chi-khaki.vercel.app/sucesso.html">
+            <!-- Desativa captcha -->
             <input type="hidden" name="_captcha" value="false">
+            <!-- Assunto do email -->
+            <input type="hidden" name="_subject" value="Nova mensagem do portfólio — Alexandre Julio">
+            <!-- Formato do email em tabela -->
+            <input type="hidden" name="_template" value="table">
 
             <div class="form-row">
               <div class="form-group">
@@ -313,14 +348,29 @@
 
   <!-- FOOTER -->
   <footer class="footer">
+    <div class="footer-stack">
+      <span class="footer-stack-label">Tech Stack</span>
+      <span class="footer-stack-sep">•</span>
+      <span>JavaScript</span>
+      <span class="footer-stack-sep">•</span>
+      <span>Node.js</span>
+      <span class="footer-stack-sep">•</span>
+      <span>React</span>
+      <span class="footer-stack-sep">•</span>
+      <span>Spring Boot</span>
+      <span class="footer-stack-sep">•</span>
+      <span>PostgreSQL</span>
+      <span class="footer-stack-sep">•</span>
+      <span>Docker</span>
+    </div>
     <div class="footer-inner">
       <a href="index.html" class="logo">
         <span class="logo-bracket">&lt;</span>AJ<span class="logo-bracket">/&gt;</span>
       </a>
-      <p>Desenvolvido com 💜 por <strong>Alexandre Julio</strong> &mdash; 2026</p>
+      <p class="footer-text">© 2026 <strong>Alexandre Julio</strong> — Software Developer</p>
       <div class="footer-links">
-        <a href="https://github.com/AlexandreJulioDev" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/alexandre-julio-0b007a211/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/AlexandreJulioDev" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/alexandre-julio-0b007a211/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </footer>
@@ -328,5 +378,19 @@
   <!-- SWIPER JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./assets/js/script.js"></script>
+
+  <!-- THEME TOGGLE SCRIPT -->
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      document.getElementById('btn-ocean').classList.toggle('active', theme === 'ocean');
+      document.getElementById('btn-emerald').classList.toggle('active', theme === 'emerald');
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'ocean';
+    setTheme(savedTheme);
+  </script>
+
 </body>
 </html>
